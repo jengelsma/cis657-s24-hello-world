@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
 import { Button } from '@rneui/themed';
 
 const Greeter = ({ greeting, buttonTitle }) => {
+  const [name, setName] = useState('');
+  const [personalGreeting, setPersonalGreeting] = useState(greeting);
+  console.log(name);
   return (
     <View style={styles.container}>
-      <Text> {greeting} </Text>
-      <TextInput placeholder='Enter your name' />
-      <Button title={buttonTitle} />
+      <Text> {personalGreeting} </Text>
+      <TextInput
+        placeholder='Enter your name'
+        onChangeText={setName}
+        value={name}
+      />
+      <Button
+        title={buttonTitle}
+        onPress={() => {
+          setPersonalGreeting(`${greeting} to you ${name}`);
+        }}
+      />
     </View>
   );
 };
