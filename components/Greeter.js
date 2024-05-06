@@ -2,12 +2,12 @@ import React from 'react';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
 import { Button } from '@rneui/themed';
 
-const Greeter = () => {
+const Greeter = ({ greeting, buttonTitle }) => {
   return (
     <View style={styles.container}>
-      <Text> Hello World! </Text>
+      <Text> {greeting} </Text>
       <TextInput placeholder='Enter your name' />
-      <Button title='Greet me please' />
+      <Button title={buttonTitle} />
     </View>
   );
 };

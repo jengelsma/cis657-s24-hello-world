@@ -6,7 +6,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text>Open up App.js to start working on your app!</Text>
-      <Greeter />
+      <Greeter greeting='Hello World!' buttonTitle='Click me' />
+      <Greeter greeting='Hello Universe!' buttonTitle='Tap me' />
     </View>
   );
 }
